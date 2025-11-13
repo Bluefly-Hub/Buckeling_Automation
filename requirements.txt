@@ -1,3 +1,4 @@
 pywinauto
 comtypes
 pandas
+requests

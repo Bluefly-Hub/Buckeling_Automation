@@ -159,7 +159,7 @@ git push origin v1.0.0
 python main.py
 
 # Run with specific Python version
-python3.13 main.py
+python3.14 main.py
 
 # Run tests (if using pytest)
 pytest

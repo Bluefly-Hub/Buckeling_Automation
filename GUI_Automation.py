@@ -140,12 +140,17 @@ class BuckelingAutomationGUI:
         entry.place(x=x, y=y, width=width, height=height)
         entry.bind("<Return>", lambda e: self._finish_edit_input(entry, row_id, column_index))
         entry.bind("<FocusOut>", lambda e: self._finish_edit_input(entry, row_id, column_index))
+        entry.bind("<Escape>", lambda e: self._cancel_edit_input(entry))
         
     def _finish_edit_input(self, entry: ttk.Entry, row_id: str, column_index: int):
         """Finish editing an input cell"""
         new_value = entry.get()
         entry.destroy()
         self.input_tree.set(row_id, column_index, new_value)
+    
+    def _cancel_edit_input(self, entry: ttk.Entry):
+        """Cancel editing without saving changes"""
+        entry.destroy()
         
     def _delete_selected_rows(self, event: tk.Event):
         """Delete selected rows when Delete key is pressed"""
