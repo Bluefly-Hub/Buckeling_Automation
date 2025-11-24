@@ -73,7 +73,7 @@ def run_automation_batch(
 
 
         if surface_load == weight and Depth_Value_current == depth :
-            repo.Surface_Weight_Button_Value(int(weight) + 1000)
+            repo.Surface_Weight_Button_Value(float(weight) + 1000)
 
             #Refresh
             foe_result= repo.FOE_Value()
@@ -113,6 +113,8 @@ def run_automation_batch(
         # Notify caller of new result
         if result_callback:
             result_callback(result_data)
+
+        previous_foe = foe_result
     
     if status_callback:
         status_callback(f"Completed {len(results)} rows")
@@ -123,8 +125,8 @@ def run_automation_batch(
 if __name__ == "__main__":
     # Example usage for testing
     test_data = [
-        {"depth": "3500", "surface_weight": "120324"},
-        {"depth": "3507.5", "surface_weight": "120803"},
+        {"depth": "5374", "surface_weight": "138661.3"},
+        {"depth": "5206", "surface_weight": "135469.6"},
     ]
     
     def print_status(msg: str):

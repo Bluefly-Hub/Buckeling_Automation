@@ -6,6 +6,7 @@ Version: 1.0.0
 from GUI_Automation import launch_gui
 from updater import check_and_update
 from version import __version__
+#from Automation import results
 
 
 def main():
@@ -18,7 +19,7 @@ def main():
     
     # Start the GUI
     launch_gui()
-
+    #print(f"\nFinal results: {results}")
 
 if __name__ == "__main__":
     main()
